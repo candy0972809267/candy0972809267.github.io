@@ -1,0 +1,73 @@
+.div_right_bottom {
+    /*background-image: url(../img/mouth-open.png);*/
+    /*background-size: 150px;*/
+    width: 160px;
+    height: 150px;
+    float: right;
+    position: fixed;
+    right: 3px;
+    bottom: 0px;
+    z-index: 20;
+    /*border:5px solid #69c;*/
+    /*_position:absolute; /* position fixed for IE6 */
+}
+
+.IMAGE{
+    margin-left: 130px;
+    opacity: 0;
+}
+
+/*loding*/
+.spinner {
+    position:absolute;
+    width: 50px;
+    height: 50px;
+    margin-top: -15px;
+/*    margin-bottom: 150px auto;*/
+/*    margin-left: 250px;*/
+    background-color: rgb(246, 196, 84);
+    z-index: 0;
+    border-radius: 100%;
+    -webkit-animation: sk-scaleout 1.0s infinite ease-in-out;
+    animation: sk-scaleout 1.0s infinite ease-in-out;
+}
+
+.spinner_word {
+    position:absolute;
+    width: 50px;
+    height: 50px;
+    z-index: 100;
+    margin-left: 150px;
+    margin-top: 140px;
+    margin-bottom: 150px auto;
+    margin-left: 250px;
+    color: rgb(122, 122, 82);
+/*    opacity: 0; */
+
+}
+
+@-webkit-keyframes sk-scaleout {
+    0% {
+        -webkit-transform: scale(0)
+    }
+
+    100% {
+        -webkit-transform: scale(1.0);
+        opacity: 0;
+    }
+}
+
+@keyframes sk-scaleout {
+    0% {
+        -webkit-transform: scale(0);
+        transform: scale(0);
+    }
+
+    100% {
+        -webkit-transform: scale(1.0);
+        transform: scale(1.0);
+        opacity: 0;
+    }
+}
+
+/**/
