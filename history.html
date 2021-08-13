@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>MOFF-HISTORY</title>
+    <link rel="icon" href="img/mouth-open.png">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/breadcrumb.css">
+<!--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
+      <!--  ADD CSS  -->
+    <link rel="stylesheet" href="imgs/recommed.css">
+    <link href="css/_css/jquery-ui.min.css" rel="stylesheet">
+    <script src="js/jquery-1.11.0.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+   <!--  ADD CSS  -->
+<link rel="stylesheet" href="css/marquee.css">
+    <script src="js/marquee.js"></script>
+  <!--  ADD javascript  -->
+    <script src="js/Recommed.js"></script>
+  <!--  ADD javascript  -->
+    <style>
+        #container {
+            width: 910px;
+            margin: 0px auto;
+            background-color: #fffcf1;
+            border-style: double;
+            border-width: 5px;
+        }
+        
+        #nav {
+            height: 50px;
+            text-align: center;
+        }
+        
+        #nav ul {
+            margin: 0px;
+            list-style: none;
+            font-family: Arial Black;
+        }
+        
+        #nav li {
+            display: inline-block;
+            border-style: solid;
+            border-width: 3px;
+        }
+        
+        #nav a {
+            display: block;
+            color: black;
+            text-decoration: none;
+            font-size: 18px;
+            background-color: rgb(246, 196, 84);
+            line-height: 50px;
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+        
+        #nav a:hover {
+            background-color: rgb(247, 185, 48);
+            color: black;
+            font-weight: bolder;
+        }
+        
+        #nav ul ul {
+            display: none;
+            z-index: 1;
+            margin: 0px;
+            padding: 0px;
+            position: absolute;
+            font-family: Microsoft JhengHei;
+        }
+        
+        #nav li li {
+            display: block;
+            margin: 0px;
+            padding: 0px;
+            position: 127px;
+        }
+        
+        #nav li:hover ul {
+            display: block;
+        }
+        
+        #main {
+            margin-top: 40px;
+            margin-left: 7%;
+            margin-right: 7%;
+            margin-bottom: 20px;
+            border-style: solid;
+            border-width: 1px;
+            border-color: #5675ac;
+            padding: 50px;
+            opacity: 0;
+        }
+        
+        #footer {
+            background-color: rgb(246, 196, 84);
+            height: 100px;
+            clear: both;
+            text-align: center;
+            padding-top: 15px;
+            box-sizing: border-box;
+        }
+        
+        .footIcon {
+            display: inline-block;
+            margin: 10px;
+        }
+        
+        .footIcon img {
+            width: 40px;
+        }
+        
+        .setFix {
+            position: fixed;
+            top: 0;
+            width: 900px;
+            z-index: 1;
+        }
+
+    </style>
+    <script>
+    $(document).ready(function() {
+        $("#main").animate({
+                            opacity: 1
+                        }, 3000);
+    });
+    </script>
+</head>
+
+<body>
+   
+    <div id="container">
+       <div id="marquee"  style="border-bottom:2px;border-style:double;border-color:black;padding:2px;">
+        </div>
+
+        <a href="index.html" title="回到首頁"><img src="img/moff.png" alt="首頁標題" style="width: 100%"></a>
+        <div id="nav">
+            <ul>
+                <li><a>STORE</a>
+                    <ul>
+                        <li><a href="low.html">平價篇</a></li>
+                        <li><a href="med.html">中價篇</a></li>
+                        <li><a href="high.html">高價篇</a></li>
+                    </ul>
+                </li>
+                <li style="margin-left: 1%"><a href="maps.html">MAPS</a></li>
+                <li style="margin-left: 1%"><a href="order.html">ORDER</a></li>
+                <li style="margin-left: 1%"><a href="history.html">HISTORY</a></li>
+                <li style="margin-left: 1%"><a href="contact.html">CONTACT</a></li>
+            </ul>
+        </div>
+        <div id="main" >
+
+            <p style="text-align: center; font-size: 28px; line-height: 48px; margin-bottom: 30px; font-family: Microsoft JhengHei">
+                我們希望忙碌的人們也能吃到想吃的美食，<br>因此有了<span style="font-weight: bold; font-size: 48px">MOFF</span>的誕生!
+                <br> 為您整合桃園市的優質餐廳並提供外送服務，
+                <br> 讓您可以直接在線上訂餐，
+                <br> 再忙碌都能品嘗到美味的食物！
+                <br>透過我們的網頁，
+                <br>MOFF將為您實現<span style="font-weight: bold; font-size: 36px">飯來張口</span>的外送服務!
+            </p>
+
+            <ul class="breadcrumb">
+            <li><a href="order.html">Order</a></li>
+        </ul>
+
+        </div>
+        <div id="footer">
+            <div class="footIcon">
+                <a href="#" title="FACEBOOK"><img src="img/facebook.png"></a>
+            </div>
+            <div class="footIcon">
+                <a href="#" title="TWITTER"><img src="img/twitter.png"></a>
+            </div>
+            <div class="footIcon">
+                <a href="#" title="GITHUB"><img src="img/github.png"></a>
+            </div>
+            <div class="footIcon">
+                <a href="#" title="GOOGLE"><img src="img/google.png"></a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        
+        
+        jQuery("MOFF-HISTORY").ready(function($) {
+
+            $(window).scroll(function() {
+                if ($(this).scrollTop() > 270) {
+                    $('#nav').addClass("setFix");
+                } else {
+                    $('#nav').removeClass("setFix");
+                }
+            });
+
+        });
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>MOFF</title>
+    <link rel="icon" href="img/mouth-open.png">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/slideshow.css">
+    <link rel="stylesheet" href="css/breadcrumb.css">
+    <link rel="stylesheet" href="css/marquee.css">
+    <script src="js/marquee.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <style>
+        #container {
+            width: 910px;
+            margin: 0px auto;
+            background-color: #fffcf1;
+            border-style: double;
+            border-width: 8px;
+        }
+        
+        #nav {
+            height: 50px;
+            text-align: center;
+        }
+        
+        #nav ul {
+            margin: 0px;
+            list-style: none;
+            font-family: Arial Black;
+        }
+        
+        #nav li {
+            display: inline-block;
+            border-style: solid;
+            border-width: 3px;
+        }
+        
+        #nav a {
+            display: block;
+            color: black;
+            text-decoration: none;
+            font-size: 18px;
+            background-color: rgb(246, 196, 84);
+            line-height: 50px;
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+        
+        #nav a:hover {
+            background-color: rgb(247, 185, 48);
+            color: black;
+            font-weight: bolder;
+        }
+        
+        #nav ul ul {
+            display: none;
+            z-index: 1;
+            margin: 0px;
+            padding: 0px;
+            position: absolute;
+            font-family: Microsoft JhengHei;
+        }
+        
+        #nav li li {
+            display: block;
+            margin: 0px;
+            padding: 0px;
+            position: 127px;
+        }
+        
+        #nav li:hover ul {
+            display: block;
+        }
+        
+        #main {
+            margin-top: 40px;
+            margin-left: 7%;
+            margin-right: 7%;
+            margin-bottom: 20px;
+            border-style: solid;
+            border-width: 1px;
+            border-color: #5675ac;
+            padding: 50px;
+        }
+        
+        #footer {
+            background-color: rgb(246, 196, 84);
+            height: 100px;
+            clear: both;
+            text-align: center;
+            padding-top: 15px;
+            box-sizing: border-box;
+        }
+        
+        .footIcon {
+            display: inline-block;
+            margin: 10px;
+        }
+        
+        .footIcon img {
+            width: 40px;
+        }
+        
+        .setFix {
+            position: fixed;
+            top: 0;
+            width: 900px;
+            z-index: 1;
+        }
+        
+        #loading {
+            position: fixed;
+            z-index: 400;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0%;
+            text-align: center;
+            font-size: 25px;
+            color: #595758;
+            background-color:hsl(30, 85%, 82%);
+        }
+
+
+    </style>
+    <script>
+    $(document).ready(function(){
+        $('#loading').delay(5000).fadeOut(800,"swing");
+            
+            var story = document.getElementById('word');
+            var s = document.getElementById('show');
+            var i = 0;
+            timer=setInterval(function(){
+                s.innerHTML=story.innerHTML.substring(0,i);
+                i++;
+                if(s.innerHTML==story.innerHTML){
+                  clearInterval(timer);
+                }
+            },180);
+        
+            marquee();
+            var t1=null;
+            t1=setInterval("marquee()",47200);
+
+    });
+        
+        function marquee()
+        {
+            ADD1();
+            setTimeout("clear()",18000);
+            setTimeout("ADD2()",18000);
+            setTimeout("clear()",32500);
+            setTimeout("ADD3()",32500);
+            setTimeout("clear()",47199);
+             
+        }
+        function clear(){
+            $('#marquee').html("");
+        }
+        
+        function ADD1(){
+             $('#marquee').html("<marquee direction=left height=30 scrollamount=8 behavior=scroll><dl><dt>今日推薦餐廳</dt><dd>"+"一番地壽喜燒 六月份謝師宴，滿20人老師免費，預先訂位，免收服務費</dd></dl></marquee>");
+        }
+
+        function ADD2(){
+            $('#marquee').html("<marquee direction=left height=30 scrollamount=8 behavior=scroll><dl><dt>恭喜</dt><dd>"+"家咖哩 榮獲Google美食評分達4.6顆星之高</dd></dl></marquee>");
+        }
+        function ADD3(){
+            $('#marquee').html("<marquee direction=left height=30 scrollamount=8 behavior=scroll><dl><dt>注意</dt><dd>"+"這一鍋分店陸續開幕囉!從北到南都吃得到~</dd></dl></marquee>");
+        }
+        
+    </script>
+    
+</head>
+
+<body>
+    <div id="loading">
+    <img src="img/loading.gif" alt="loading..."/>
+    <p id="word" style="display:none;">loading......</p>
+    <p id="show"></p>
+    </div>  
+    <div id="container">
+        <div id="marquee"  style="border-bottom:2px;border-style:double;border-color:black;padding:2px;">
+        </div>
+        <img src="img/moff.png" alt="首頁標題" style="width: 100%">
+        <!-- Slideshow container -->
+        <div class="slideshow-container" style="margin-top: 10px">
+
+            <div class="mySlides fade">
+                <div class="numbertext">1 / 3</div>
+                <a href="low.html" title="平價篇"><img src="img/%E5%B9%B3%E5%83%B9%E5%B0%81%E9%9D%A2.png" style="width: 90%; margin-left: 5%"></a>
+
+
+            </div>
+
+            <div class="mySlides fade">
+                <div class="numbertext">2 / 3</div>
+                <a href="med.html" title="中價篇"><img src="img/%E4%B8%AD%E5%83%B9%E5%B0%81%E9%9D%A2.png" style="width: 90%; margin-left: 5%"></a>
+
+
+            </div>
+
+            <div class="mySlides fade">
+                <div class="numbertext">3 / 3</div>
+                <a href="high.html" title="高價篇"><img src="img/%E9%AB%98%E5%83%B9%E5%B0%81%E9%9D%A2.png" style="width: 90%; margin-left: 5%"></a>
+
+
+            </div>
+
+        </div>
+        <br>
+
+        <div style="text-align:center; margin-bottom: 30px">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+
+
+        <div id="nav">
+            <ul>
+                <li><a>STORE</a>
+                    <ul>
+                        <li><a href="low.html">平價篇</a></li>
+                        <li><a href="med.html">中價篇</a></li>
+                        <li><a href="high.html">高價篇</a></li>
+                    </ul>
+                </li>
+                <li style="margin-left: 1%"><a href="maps.html">MAPS</a></li>
+                <li style="margin-left: 1%"><a href="order.html">ORDER</a></li>
+                <li style="margin-left: 1%"><a href="history.html">HISTORY</a></li>
+                <li style="margin-left: 1%"><a href="contact.html">CONTACT</a></li>
+            </ul>
+        </div>
+
+        <div id="main">
+            <p style="line-height: 48px; letter-spacing: 3px; font-size: 36px; font-family: fantasy; text-align: center">
+                Restaurant Introduction</p>
+            <div style="margin-left: 5%">
+                <a href="https://www.facebook.com/%E4%BA%AB%E6%A8%82%E7%85%AE%E7%BE%A9-Pasta-with-Pleasure-261687827368324/
+" title="享樂煮義" target="_blank"><img src="img/%E5%B9%B3%E5%83%B91.jpg" alt="平價商店一" style="width: 300px; margin-bottom: 48px; margin-top: 30px; float: left"></a>
+                <a href="https://www.facebook.com/T033507572/" title="北一水餃" target="_blank"><img src="img/%E5%B9%B3%E5%83%B92.jpg" alt="平價商店二" style="width: 300px; margin-bottom: 48px; margin-top: 30px; margin-left: 2%"></a>
+                <a href="https://www.facebook.com/%E6%BB%BF%E5%A4%A7%E7%A2%97%E6%BB%B7%E5%91%B3-%E4%B8%AD%E5%A3%A2%E5%81%A5%E8%A1%8C%E5%BA%97-138954926856750/" title="滿大碗滷味" target="_blank"><img src="img/%E5%B9%B3%E5%83%B93.jpg" alt="平價商店三" style="width: 300px;  margin-bottom: 48px; float: left"></a>
+                <a href="http://walkingsteak.business.site/" title="走樣個人牛排杯" target="_blank"><img src="img/%E5%B9%B3%E5%83%B94.jpg" alt="平價商店四" style="width: 300px; margin-bottom: 48px; margin-left: 2%"></a>
+                <a href="https://www.facebook.com/sukiya.zensho.taiwan/" title="すき家" target="_blank"><img src="img/%E5%B9%B3%E5%83%B95.jpg" alt="平價商店五" style="width: 300px;  float: left"></a>
+                <a href="https://www.facebook.com/feng.delicious/" title="峰味麵線食堂" target="_blank"><img src="img/%E5%B9%B3%E5%83%B96.jpg" alt="平價商店六" style="width: 300px; margin-left: 2%"></a>
+
+                <a href="http://www.kaidonno1.com/" title="開丼" target="_blank"><img src="img/%E4%B8%AD%E5%83%B91.jpg" alt="中價商店一" style="width: 300px; margin-bottom: 48px; margin-top: 30px; float: left"></a>
+                <a href="https://www.jiacurry.com/?stores=27" title="家咖喱" target="_blank"><img src="img/%E4%B8%AD%E5%83%B92.jpg" alt="中價商店二" style="width: 300px; margin-bottom: 48px; margin-top: 30px; margin-left: 2%"></a>
+                <a href="https://www.facebook.com/horizon033286983/" title="地平線一號" target="_blank"><img src="img/%E4%B8%AD%E5%83%B93.jpg" alt="中價商店三" style="width: 300px; margin-bottom: 48px; float: left"></a>
+                <a href="https://www.facebook.com/howfunpaellabar3/" title="How Fun食堂" target="_blank"><img src="img/%E4%B8%AD%E5%83%B94.jpg" alt="中價商店四" style="width: 300px; margin-bottom: 48px; margin-left: 2%"></a>
+                <a href="https://www.facebook.com/GanRiBrunch/" title="甘日洋食行" target="_blank"><img src="img/%E4%B8%AD%E5%83%B95.jpg" alt="中價商店五" style="width: 300px; float: left"></a>
+                <a href="https://www.facebook.com/YWshuan/" title="圓味涮涮鍋" target="_blank"><img src="img/%E4%B8%AD%E5%83%B96.jpg" alt="中價商店六" style="width: 300px; margin-left: 2%"></a>
+
+                <a href="http://www.sanhoyan.com.tw/" title="參和院" target="_blank"><img src="img/%E9%AB%98%E5%83%B91.jpg" alt="高價商店一" style="width: 300px; margin-bottom: 48px; margin-top: 30px; float: left"></a>
+                <a href="https://www.facebook.com/%E6%9D%B1%E9%A2%A8%E8%88%9E%E4%B9%8B%E7%A3%AF-552364274826034/" title="東風舞之磯" target="_blank"><img src="img/%E9%AB%98%E5%83%B92.jpg" alt="高價商店二" style="width: 300px; margin-bottom: 48px; margin-top: 30px; margin-left: 2%"></a>
+                <a href="https://www.facebook.com/lovelybistro/" title="樂福利" target="_blank"><img src="img/%E9%AB%98%E5%83%B93.jpg" alt="高價商店三" style="width: 300px; margin-bottom: 48px; float: left"></a>
+                <a href="http://www.avignonrestaurant.com/" title="艾維農歐風素食" target="_blank"><img src="img/%E9%AB%98%E5%83%B94.jpg" alt="高價商店四" style="width: 300px; margin-bottom: 48px; margin-left: 2%"></a>
+                <a href="https://www.facebook.com/pages/%E4%B8%80%E7%95%AA%E5%9C%B0%E5%A3%BD%E5%96%9C%E7%87%92/356454744451809" title="一番地" target="_blank"><img src="img/%E9%AB%98%E5%83%B95.jpg" alt="高價商店五" style="width: 300px; float: left"></a>
+                <a href="http://www.toponepot.com/" title="這一鍋" target="_blank"><img src="img/%E9%AB%98%E5%83%B96.jpg" alt="高價商店六" style="width: 300px; margin-left: 2%"></a>
+            </div>
+            
+            <ul class="breadcrumb" style="margin-top: 50px">
+            <li><a href="order.html">Order</a></li>
+        </ul>
+            
+        </div>
+        <div id="footer">
+            <div class="footIcon">
+                <a href="#" title="FACEBOOK"><img src="img/facebook.png"></a>
+            </div>
+            <div class="footIcon">
+                <a href="#" title="TWITTER"><img src="img/twitter.png"></a>
+            </div>
+            <div class="footIcon">
+                <a href="#" title="GITHUB"><img src="img/github.png"></a>
+            </div>
+            <div class="footIcon">
+                <a href="#" title="GOOGLE"><img src="img/google.png"></a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        jQuery("MOFF").ready(function($) {
+
+            $(window).scroll(function() {
+                if ($(this).scrollTop() > 270) {
+                    $('#nav').addClass("setFix");
+                } else {
+                    $('#nav').removeClass("setFix");
+                }
+            });
+
+        });
+
+    </script>
+
+    <script>
+        var slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("dot");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {
+                slideIndex = 1
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+            setTimeout(showSlides, 2500); // Change image every 2.5 seconds
+        }
+
+    </script>
+
+</body>
+
+</html>
